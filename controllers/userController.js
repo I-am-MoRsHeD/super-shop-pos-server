@@ -238,7 +238,6 @@ exports.changeBranch = async (req, res) => {
   const { id } = req.params;
   const filter = { _id: new Object(id) };
   const { branch } = req.body;
-  console.log(branch);
   const updatedDoc = {
     $set: {
       branch: branch,

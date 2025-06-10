@@ -473,7 +473,6 @@ exports.getProductStatistics = async (req, res) => {
 exports.updateSoldProducts = async (req, res) => {
   try {
     const { items } = req.body;
-    console.log(items);
 
     const negativeQuantity = items.some((item) => item.quantity < 0);
     if (negativeQuantity) {

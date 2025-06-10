@@ -169,7 +169,6 @@ exports.getSellProductFilter = async (req, res) => {
       query.sellingDate = { $gte: startDate, $lte: endDate };
     }
     const data = await sellProductsDB.find(query);
-    console.log('filter console', data);
     res.json(data);
   } catch (error) {
     console.error(error);
