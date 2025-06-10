@@ -1,7 +1,12 @@
 const logout = (req, res) => {
-  const user = req.body;
-  console.log("logging out", user);
-  res.clearCookie("token", { maxAge: 0 }).send({ success: true });
+  console.log("logging out", req.body);
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    path: "/",
+  });
+  res.status(200).send({ success: true });
 };
 
 module.exports = logout;
